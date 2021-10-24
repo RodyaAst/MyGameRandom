@@ -1,7 +1,7 @@
 package Game;
 
 public class Robot {
-    private int number;
+    private final int number;
     private int max = 100;
     private int min = 1;
 
@@ -13,8 +13,8 @@ public class Robot {
         return checkNum();
     }
 
-    private int robotNum(int numIn, int numOut) {
-        return (int) (Math.random() * ++numOut) + numIn;
+    private int robotNum(int numMin, int numMax) {
+        return (int) (Math.random()*(numMax+1-numMin)+numMin); //(int)(Math.random() * (max + 1 - min) + min)
     }
 
 
@@ -23,7 +23,7 @@ public class Robot {
             robores = robotNum(min, max);
             if (robores < number) {
                 min = robores;
-            } else if (robores > max) {
+            } else if (robores > number) {
                 max = robores;
             } else if (robores == number) return true;
         System.out.println("Робот не угадал!");

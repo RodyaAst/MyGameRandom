@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Man {
     private String name;
-    private int number;
+    private final int number;
 
     public Man(String name, int number) {
         this.name = name;
