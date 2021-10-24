@@ -23,8 +23,8 @@ public class Game {
         System.out.println("Давай сыграем в игру!");
         Thread.sleep(1000);
         System.out.print("Введи свое имя: ");
-        randomNun = (int)(Math.random()*100);
-        man = createMan(setName(),randomNun);
+        randomNun = (int) (Math.random() * 100);
+        man = createMan(setName(), randomNun);
         robot = createRobot(randomNun);
         while (true) {
             boolean booM = man.startMan();

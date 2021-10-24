@@ -8,24 +8,26 @@ public class Man {
 
     public Man(String name, int number) {
         this.name = name;
-        this.number=number;
+        this.number = number;
 
     }
-    public boolean startMan(){
+
+    public boolean startMan() {
         int outNumber = tryNum();
-        if (outNumber==number) {
+        if (outNumber == number) {
             return true;
-        } else if (outNumber>number) {
+        } else if (outNumber > number) {
             System.out.println("Ваше число больше!");
-        } else if (outNumber<number) {
+        } else if (outNumber < number) {
             System.out.println("Ваше число меньше!");
         }
         return false;
     }
-    private int tryNum () {
+
+    private int tryNum() {
         System.out.print("Введите число от 1 до 100: ");
-        int result=0;
-        while(true) {
+        int result = 0;
+        while (true) {
             try {
                 result = new Scanner(System.in).nextInt();
             } catch (Exception e) {

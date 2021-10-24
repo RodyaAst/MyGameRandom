@@ -14,18 +14,18 @@ public class Robot {
     }
 
     private int robotNum(int numMin, int numMax) {
-        return (int) (Math.random()*(numMax+1-numMin)+numMin); //(int)(Math.random() * (max + 1 - min) + min)
+        return (int) (Math.random() * (numMax + 1 - numMin) + numMin);
     }
 
 
     private boolean checkNum() {
         int robores;
-            robores = robotNum(min, max);
-            if (robores < number) {
-                min = robores;
-            } else if (robores > number) {
-                max = robores;
-            } else if (robores == number) return true;
+        robores = robotNum(min, max);
+        if (robores < number) {
+            min = robores;
+        } else if (robores > number) {
+            max = robores;
+        } else if (robores == number) return true;
         System.out.println("Робот не угадал!");
         return false;
     }
