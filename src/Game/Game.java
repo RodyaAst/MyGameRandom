@@ -4,7 +4,6 @@ package Game;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Game {
@@ -12,7 +11,7 @@ public class Game {
     private Robot robot;
     private int randomNun;
     private String path = "C:\\Users\\Rodya\\Desktop\\MyGame\\src\\Game\\logplayers.txt";
-    private BufferedWriter writer;
+    private BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
 
     public Game() throws IOException {
     }
@@ -52,8 +51,9 @@ public class Game {
         String name;
         while (true) {
             name = new Scanner(System.in).nextLine();
-            writer = new BufferedWriter(new FileWriter(path, true));
             if (!name.equalsIgnoreCase("")) {
+                writer.write(name);
+                writer.close();
                 break;
             } else System.out.print("Введи свое имя: ");
         }
