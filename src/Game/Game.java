@@ -52,7 +52,7 @@ public class Game {
         while (true) {
             name = new Scanner(System.in).nextLine();
             if (!name.equalsIgnoreCase("")) {
-                writer.write(name);
+                writer.write(name+"\n");
                 writer.close();
                 break;
             } else System.out.print("Введи свое имя: ");
