@@ -1,14 +1,23 @@
 package Game;
 
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Game {
     private Man man;
     private Robot robot;
     private int randomNun;
+    private String path = "C:\\Users\\Rodya\\Desktop\\MyGame\\src\\Game\\logplayers.txt";
+    private BufferedWriter writer;
 
-    public void gameLines() throws InterruptedException {
+    public Game() throws IOException {
+    }
+
+    public void gameLines() throws InterruptedException, IOException {
         Thread.sleep(500);
         System.out.println("Добрый день!");
         Thread.sleep(1000);
@@ -39,10 +48,11 @@ public class Game {
         return new Robot(number);
     }
 
-    private String setName() {
+    private String setName() throws IOException {
         String name;
         while (true) {
             name = new Scanner(System.in).nextLine();
+            writer = new BufferedWriter(new FileWriter(path, true));
             if (!name.equalsIgnoreCase("")) {
                 break;
             } else System.out.print("Введи свое имя: ");
